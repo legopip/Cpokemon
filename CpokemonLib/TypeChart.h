@@ -9,7 +9,7 @@ class TypeChart {
 private:
 	//[attacking type] [defending type]
 	//n = x1, s = x2, h = x0.5, x = x0            n   g   f   w   e   g   b   f   r   p   f   p   g   i   d   d   s   f
-	const char chart[18][18] = {	/*normal*/	{'n','n','n','n','n','n','n','n','h','n','n','n','x','h','n','n','h','n'},
+	const char chart[18][18] = {	/*normal*/	{'n','n','n','n','n','n','n','n','h','n','n','n','x','n','n','n','h','n'},
 									/*grass*/	{'n','h','h','s','n','s','h','h','s','h','n','n','n','n','h','n','h','n'},
 									/*fire*/	{'n','s','h','h','n','n','s','n','h','n','n','n','n','s','h','n','s','n'},
 									/*water*/	{'n','h','s','h','n','s','n','n','s','n','n','n','n','h','h','n','n','n'},
@@ -25,8 +25,8 @@ private:
 									/*ice*/		{'n','s','n','h','n','s','n','s','n','n','n','n','n','h','s','n','h','n'},
 									/*dragon*/	{'n','n','n','n','n','n','n','n','n','n','n','n','n','n','s','n','h','x'},
 									/*dark*/	{'n','n','n','n','n','n','n','n','n','n','h','s','s','n','n','h','n','h'},
-									/*steel*/	{'n','n','h','h','h','n','n','n','s','n','n','n','n','s','n','n','h','s'},
-									/*fairy*/	{'n','n','h','n','n','n','n','n','n','h','s','n','h','n','s','s','h','n'} };
+									/*steel*/	{'n','h','h','h','h','n','n','n','s','n','n','n','n','s','n','n','h','s'},
+									/*fairy*/	{'n','n','h','n','n','n','n','n','n','h','s','n','h','h','s','s','h','n'} };
 
 	//something
 public:

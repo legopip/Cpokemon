@@ -58,6 +58,21 @@ int Pokemon::GetEXPyeild() {
 	return (species.expYeild * level) / 7; //add in stuff like trainer exp and lucky egg later
 }
 
+void Pokemon::CheckForLevelUp() {
+	if (level < 100) {
+		while (exp >= expToLevel) {
+			std::cout << nickname << " leveled up!" << std::endl;
+			int oldHp = GetHP();
+			level++;
+			int newHp = GetHP();
+			currentHP += newHp - oldHp;
+			if (level < 100) {
+				expToLevel = lookUpExp(species.expCurve, level);
+			}
+		}
+	}
+}
+
 std::string Pokemon::ToString() {
 	std::string string = "";
 	string += nickname + " the " + species.name;
@@ -89,6 +104,15 @@ std::string Pokemon::ToString() {
 		if (knownMoves[i].move) {
 			string += knownMoves[i].move->name + ", ";
 		}
+	}
+	return string;
+}
+
+std::string Pokemon::GetTextHPbar() {
+	std::string string = "HP:";
+	int hpOutOfTen = ((float)currentHP / GetHP()) * 10.0f;
+	for (int i = 0; i < hpOutOfTen; i++) {
+		string += "=";
 	}
 	return string;
 }

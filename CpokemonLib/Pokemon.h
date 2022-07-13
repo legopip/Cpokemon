@@ -42,11 +42,13 @@ public:
 	int GetSPD();
 
 	int GetEXPyeild();
+	void CheckForLevelUp();
 
 	int numberOfKnownMoves;
 	KnownMove knownMoves[4];
 
 	std::string ToString();
+	std::string GetTextHPbar();
 
 	int IVHP;
 	int IVATK;

@@ -45,8 +45,10 @@ int main()
 
     while (pk1->currentHP > 0 && pk2->currentHP > 0) {
         //Print the current status (this will be replaced by Lucas's UI later
-        std::cout << pk1->nickname << " HP: " << pk1->currentHP << "/" << pk1->GetHP() << std::endl;
-        std::cout << pk2->nickname << " HP: " << pk2->currentHP << "/" << pk2->GetHP() << std::endl;
+        std::cout << pk1->nickname << std::endl;
+        std::cout << pk1->GetTextHPbar() << std::endl;
+        std::cout << pk2->nickname << std::endl;
+        std::cout << pk2->GetTextHPbar() << std::endl;
         //figure out which move each pokemon will use (random is fine right now)
         int pk1ChosenMove = rand() % pk1->numberOfKnownMoves;
         int pk2ChosenMove = rand() % pk2->numberOfKnownMoves;
@@ -69,6 +71,12 @@ int main()
         //resolve turn
         for (int i = 0; i < turns.size(); i++) {
             turns[i].move->Invoke(turns[i].pokemon, turns[i].targets);
+        }
+        if (pk1->nvStatus) {
+            pk1->nvStatus->Upkeep();
+        }
+        if (pk2->nvStatus) {
+            pk2->nvStatus->Upkeep();
         }
     }
     //reward the winner with exp

@@ -8,6 +8,7 @@ Move::~Move() {
 }
 
 void Move::Invoke(Pokemon* user, std::vector<Pokemon*> targets, MoveSummary summery) {
+	std::cout << user->nickname << " used " << name << "." << std::endl;
 	summery.damageTotal = 0;
 	for (int i = 0; i < effects.size(); i++) {
 		effects[i]->Invoke(user, targets, summery);

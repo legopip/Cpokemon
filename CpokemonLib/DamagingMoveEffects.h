@@ -39,7 +39,18 @@ public:
             float critical = 1.0f;
             int critChance = rand() % 26;
             if (critChance == 0) {
+                std::cout << "Critical Hit!" << std::endl;
                 critical = 1.5f;
+            }
+
+            if (effectiveness == 0.0f) {
+                std::cout << "It had no effect." << std::endl;
+            }
+            else if (effectiveness > 1.0f) {
+                std::cout << "It's super effective!" << std::endl;
+            }
+            else if (effectiveness > 1.0f) {
+                std::cout << "It's not very effective..." << std::endl;
             }
 
             //plug it into the pokemon damage formula
@@ -47,7 +58,7 @@ public:
             int damage = ((((2 * attackerLVL) / 5.0f + 2) * (power * user->ability->GetAttackMod(user, type)) * (attackerATK / defenderDEF)) / 50.0f + 2)
                 * critical * randomness * effectiveness * STAB;
 
-            std::cout << "Dealing " << damage << " damage" << std::endl;
+            //std::cout << "Dealing " << damage << " damage" << std::endl;
 
             targets[i]->currentHP -= damage;
 
@@ -93,7 +104,16 @@ public:
             float critical = 1.0f;
             int critChance = rand() % 26;
             if (critChance == 0) {
+                std::cout << "Critical Hit!" << std::endl;
                 critical = 1.5f;
+            }
+
+            if (effectiveness == 0.0f) {
+                std::cout << "It had no effect." << std::endl;
+            }else if (effectiveness > 1.0f) {
+                std::cout << "It's super effective!" << std::endl;
+            }else if (effectiveness > 1.0f) {
+                std::cout << "It's not very effective..." << std::endl;
             }
 
             //plug it into the pokemon damage formula
@@ -101,7 +121,7 @@ public:
             int damage = ((((2 * attackerLVL) / 5.0f + 2) * (power * user->ability->GetAttackMod(user, type)) * (attackerATK / defenderDEF)) / 50.0f + 2)
                 * critical * randomness * effectiveness * STAB;
 
-            std::cout << "Dealing " << damage << " damage" << std::endl;
+            //std::cout << "Dealing " << damage << " damage" << std::endl;
 
             targets[i]->currentHP -= damage;
 
@@ -113,7 +133,8 @@ public:
 class LifeStealEffect : public MoveEffect {
     void Invoke(Pokemon* user, std::vector<Pokemon*> targets, MoveSummary& summery) {
         user->currentHP += summery.damageTotal / 2 + 1;
-        std::cout << "Healing " << summery.damageTotal / 2 + 1 << " Damage" << std::endl;
+        //std::cout << "Healing " << summery.damageTotal / 2 + 1 << " Damage" << std::endl;
+        std::cout << user->nickname << " regained HP." << std::endl;
         if (user->currentHP > user->GetHP()) { user->currentHP = user->GetHP(); }
     }
 };
