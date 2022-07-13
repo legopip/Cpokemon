@@ -9,7 +9,6 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
 
     DataLoader dL;
     srand(time(NULL));
