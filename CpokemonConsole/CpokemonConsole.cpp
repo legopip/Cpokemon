@@ -7,6 +7,21 @@
 #include "DataLoader.h"
 #include "PokemonBuilder.h"
 
+struct TurnMovePair {
+    Pokemon* pokemon;
+    Move* move;  
+    std::vector<Pokemon*> targets;
+};
+
+bool OrderTurns(TurnMovePair lhs, TurnMovePair rhs) {
+    if (lhs.move->priority == rhs.move->priority) {
+        return lhs.pokemon->GetSPD() > rhs.pokemon->GetSPD();
+    }
+    else {
+        return lhs.move->priority > rhs.move->priority;
+    }
+}
+
 int main()
 {
 
@@ -26,12 +41,7 @@ int main()
 
     std::cout << pk1->ToString() << std::endl;
     std::cout << pk2->ToString() << std::endl;
-    
-    //set up the Battle (this logic will be moved to the LIB later
-    std::vector<Pokemon*> enemyPokemon;
-    enemyPokemon.push_back(pk2);
-    std::vector<Pokemon*> playerPokemon;
-    playerPokemon.push_back(pk1);
+        
 
     while (pk1->currentHP > 0 && pk2->currentHP > 0) {
         //Print the current status (this will be replaced by Lucas's UI later
@@ -41,12 +51,30 @@ int main()
         int pk1ChosenMove = rand() % pk1->numberOfKnownMoves;
         int pk2ChosenMove = rand() % pk2->numberOfKnownMoves;
         //Determine Move Order (Move Priority then Pokemon Speed)
+        TurnMovePair pk1turn;
+        pk1turn.pokemon = pk1;
+        pk1turn.move = pk1->knownMoves[pk1ChosenMove].move;
+        pk1turn.targets.push_back(pk2);
         
+        TurnMovePair pk2turn;
+        pk2turn.pokemon = pk2;
+        pk2turn.move = pk2->knownMoves[pk2ChosenMove].move;
+        pk2turn.targets.push_back(pk1);
+
+        std::vector<TurnMovePair> turns;
+        turns.push_back(pk1turn);
+        turns.push_back(pk2turn);
+        std::sort(turns.begin(), turns.end(), OrderTurns);
+
         //resolve turn
-        pk1->knownMoves[pk1ChosenMove].move->Invoke(pk1, enemyPokemon);
-        pk2->knownMoves[pk2ChosenMove].move->Invoke(pk2, playerPokemon);
+        for (int i = 0; i < turns.size(); i++) {
+            turns[i].move->Invoke(turns[i].pokemon, turns[i].targets);
+        }
     }
     //reward the winner with exp
+    if (pk1->currentHP > 0) {
+        pk1->exp += pk2->GetEXPyeild();
+    }
     std::cout << pk1->nickname << " HP: " << pk1->currentHP << "/" << pk1->GetHP() << std::endl;
     std::cout << pk2->nickname << " HP: " << pk2->currentHP << "/" << pk2->GetHP() << std::endl;
 
