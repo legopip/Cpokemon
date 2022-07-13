@@ -1,0 +1,35 @@
+NATNUM:1
+NAME:Kodrys:Tree Spirit:50
+TYPE:1:18
+EGG:5:10
+ABILITY:0:0:3
+BST:40:45:55:65:50:55:310
+EXP:3:65:3:1
+CATCH:45:70
+INFO:2.5:20.8:10:1:4
+MOVES:0,0:0,4:7,6
+DESC:Deeply curious, when humans honour a tree that a Kodrys guards, it will often mimic and follow them with gratitude
+
+NATNUM:4
+NAME:Moalt:Forager:50
+TYPE:2:18
+EGG:4:15
+ABILITY:1:1:4
+BST:50:50:60:45:60:45:310
+EXP:3:65:2:1
+CATCH:45:70
+INFO:1.9:31.5:4:6:3
+MOVES:0,1:0,3:7,7
+DESC:Moalts tend to live around urban areas where they collect discarded rubbish, even melting through metal bins to do so
+
+NATNUM:6
+NAME:Tapid:Tapir:50
+TYPE:3:18
+EGG:1:4
+ABILITY:2:2:5
+BST:50:50:45:50:50:65:310
+EXP:3:65:2:1
+CATCH:45:70
+INFO:1.9:31.5:4:6:3
+MOVES:0,2:0,5:7,8
+DESC:Being cute and playful, Tapids are popular pets. However, their tendency to injure while playing means they often get abandoned.

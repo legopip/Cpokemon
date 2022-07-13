@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Type">
+      <UniqueIdentifier>{52685747-9827-4015-b657-e79fb87401bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Natures">
+      <UniqueIdentifier>{6e061ff1-84e3-4ed7-b76f-13f29892e4ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pokemon">
+      <UniqueIdentifier>{bf1c14a4-9e37-419f-a1ee-133c51e56f4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConstStuff">
+      <UniqueIdentifier>{b972ec3f-4383-4a0c-8985-dcca718019fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Moves">
+      <UniqueIdentifier>{e975aa74-1ba4-4544-b4bc-17d1871b2ca1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{c4b52cb6-eeb4-44ca-9c80-73701157a5e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataLoader">
+      <UniqueIdentifier>{01990f17-b75b-45b7-8639-969a171380e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Abilities">
+      <UniqueIdentifier>{7c4d9cef-9674-4af4-9ecc-b8797fa49e6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StatusConditions">
+      <UniqueIdentifier>{7de3421e-e8a1-474c-a93d-da4051d0aa97}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Typings.h">
+      <Filter>Type</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeChart.h">
+      <Filter>Type</Filter>
+    </ClInclude>
+    <ClInclude Include="Nature.h">
+      <Filter>Natures</Filter>
+    </ClInclude>
+    <ClInclude Include="Pokemon.h">
+      <Filter>Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="PokemonSpecies.h">
+      <Filter>Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpCurves.h">
+      <Filter>ConstStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Move.h">
+      <Filter>Moves</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveFunction.h">
+      <Filter>Moves</Filter>
+    </ClInclude>
+    <ClInclude Include="DamagingMoveEffects.h">
+      <Filter>Moves</Filter>
+    </ClInclude>
+    <ClInclude Include="Stats.h">
+      <Filter>Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="EggGroups.h">
+      <Filter>Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="PokedexInfo.h">
+      <Filter>Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="DataLoader.h">
+      <Filter>DataLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="PokemonBuilder.h">
+      <Filter>Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="PokemonNames.h">
+      <Filter>Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveNames.h">
+      <Filter>Moves</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveBuilder.h">
+      <Filter>Moves</Filter>
+    </ClInclude>
+    <ClInclude Include="AbilityNames.h">
+      <Filter>Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="PokemonGenders.h">
+      <Filter>Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="LowHPPowerUpAbility.h">
+      <Filter>Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="AbilityBuilder.h">
+      <Filter>Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusConditionNames.h">
+      <Filter>StatusConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusMoveEffects.h">
+      <Filter>Moves</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveEffect.h">
+      <Filter>Moves</Filter>
+    </ClInclude>
+    <ClInclude Include="BurnStatusCondition.h">
+      <Filter>StatusConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusConditionBuilder.h">
+      <Filter>StatusConditions</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Pokemon.cpp">
+      <Filter>Pokemon</Filter>
+    </ClCompile>
+    <ClCompile Include="Move.cpp">
+      <Filter>Moves</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveBuilder.cpp">
+      <Filter>Moves</Filter>
+    </ClCompile>
+    <ClCompile Include="Ability.h">
+      <Filter>Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="LowHPPowerUpAbility.cpp">
+      <Filter>Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="AbilityBuilder.cpp">
+      <Filter>Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="NonVolatileStatusCondition.h">
+      <Filter>StatusConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="BurnStatusCondition.cpp">
+      <Filter>StatusConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusConditionBuilder.cpp">
+      <Filter>StatusConditions</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pokemon.pkif">
+      <Filter>Data</Filter>
+    </None>
+  </ItemGroup>
+</Project>

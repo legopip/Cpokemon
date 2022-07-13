@@ -1,0 +1,119 @@
+#pragma once
+
+#include "MoveEffect.h"
+
+class PhysicalAttackMove : public MoveEffect {
+public:
+	int power;
+	int accuracy;
+
+    void Invoke(Pokemon* user, std::vector<Pokemon*> targets, MoveSummary& summery) {
+        for (int i = 0; i < targets.size(); i++) {
+            float effectiveness = chart.GetEffectiveness(*type, 
+                targets[i]->species.type1, targets[i]->species.type2);
+
+            //Check if it hits
+            int hitChance = rand() % 100 + 1;
+            if (hitChance > accuracy) {
+                summery.hits.push_back(false);
+                if (targets.size() == 1) {
+                    std::cout << "The attack missed!" << std::endl;
+                }
+                else {
+                    std::cout << "The attack missed the opponent " << targets[i]->species.name << std::endl;
+                }
+                continue;
+            }
+            summery.hits.push_back(true);
+
+            //get the attacker and Defender Data
+            int attackerATK = user->GetATK();
+            int defenderDEF = targets[i]->GetDEF();
+            int attackerLVL = user->level;
+            float STAB = 1.0f;
+            if (*type == user->species.type1 || *type == user->species.type1) {
+                STAB = 1.5f;
+            }
+
+            float randomness = (rand() % 15 + 85) / 100.0f;
+            float critical = 1.0f;
+            int critChance = rand() % 26;
+            if (critChance == 0) {
+                critical = 1.5f;
+            }
+
+            //plug it into the pokemon damage formula
+            //source: https://bulbapedia.bulbagarden.net/wiki/Damage
+            int damage = ((((2 * attackerLVL) / 5.0f + 2) * (power * user->ability->GetAttackMod(user, type)) * (attackerATK / defenderDEF)) / 50.0f + 2)
+                * critical * randomness * effectiveness * STAB;
+
+            std::cout << "Dealing " << damage << " damage" << std::endl;
+
+            targets[i]->currentHP -= damage;
+
+            summery.damageTotal += damage;
+        }
+	}
+};
+
+class SpecialAttackMove : public MoveEffect {
+public:
+    int power;
+    int accuracy;
+
+    void Invoke(Pokemon* user, std::vector<Pokemon*> targets, MoveSummary& summery) {
+        for (int i = 0; i < targets.size(); i++) {
+            float effectiveness = chart.GetEffectiveness(*type,
+                targets[i]->species.type1, targets[i]->species.type2);
+
+            //Check if it hits
+            int hitChance = rand() % 100 + 1;
+            if (hitChance > accuracy) {
+                summery.hits.push_back(false);
+                if (targets.size() == 1) {
+                    std::cout << "The attack missed!" << std::endl;
+                }
+                else {
+                    std::cout << "The attack missed the opponent " << targets[i]->species.name << std::endl;
+                }
+                continue;
+            }
+            summery.hits.push_back(true);
+
+            //get the attacker and Defender Data
+            int attackerATK = user->GetSPATK();
+            int defenderDEF = targets[i]->GetSPDEF();
+            int attackerLVL = user->level;
+            float STAB = 1.0f;
+            if (*type == user->species.type1 || *type == user->species.type1) {
+                STAB = 1.5f;
+            }
+
+            float randomness = (rand() % 15 + 85) / 100.0f;
+            float critical = 1.0f;
+            int critChance = rand() % 26;
+            if (critChance == 0) {
+                critical = 1.5f;
+            }
+
+            //plug it into the pokemon damage formula
+            //source: https://bulbapedia.bulbagarden.net/wiki/Damage
+            int damage = ((((2 * attackerLVL) / 5.0f + 2) * (power * user->ability->GetAttackMod(user, type)) * (attackerATK / defenderDEF)) / 50.0f + 2)
+                * critical * randomness * effectiveness * STAB;
+
+            std::cout << "Dealing " << damage << " damage" << std::endl;
+
+            targets[i]->currentHP -= damage;
+
+            summery.damageTotal += damage;
+        }
+    }
+};
+
+class LifeStealEffect : public MoveEffect {
+    void Invoke(Pokemon* user, std::vector<Pokemon*> targets, MoveSummary& summery) {
+        user->currentHP += summery.damageTotal / 2 + 1;
+        std::cout << "Healing " << summery.damageTotal / 2 + 1 << " Damage" << std::endl;
+        if (user->currentHP > user->GetHP()) { user->currentHP = user->GetHP(); }
+    }
+};
