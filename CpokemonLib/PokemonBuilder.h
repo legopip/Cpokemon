@@ -83,6 +83,13 @@ public:
 		}
 
 		pokemon->currentHP = pokemon->GetHP();
+		pokemon->isTrainerPokemon = false;
+		return pokemon;
+	}
+
+	Pokemon* BuildWeakTrainerPokemon(int index, int level) {
+		Pokemon* pokemon = BuildRegularPokemon(index, level);
+		pokemon->isTrainerPokemon = true;
 		return pokemon;
 	}
 };

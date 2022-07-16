@@ -40,6 +40,12 @@
     <Filter Include="StatusConditions">
       <UniqueIdentifier>{7de3421e-e8a1-474c-a93d-da4051d0aa97}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Trainers">
+      <UniqueIdentifier>{6698c91c-eeab-4e37-b856-4e3e248b04c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Battle">
+      <UniqueIdentifier>{7c771c62-4617-4adb-9913-8213b78f56bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Typings.h">
@@ -120,6 +126,18 @@
     <ClInclude Include="StatusConditionBuilder.h">
       <Filter>StatusConditions</Filter>
     </ClInclude>
+    <ClInclude Include="SleepStatusCondition.h">
+      <Filter>StatusConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="Trainer.h">
+      <Filter>Trainers</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Trainers</Filter>
+    </ClInclude>
+    <ClInclude Include="Battle.h">
+      <Filter>Battle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pokemon.cpp">
@@ -148,6 +166,15 @@
     </ClCompile>
     <ClCompile Include="StatusConditionBuilder.cpp">
       <Filter>StatusConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="SleepStatusCondition.cpp">
+      <Filter>StatusConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="Trainer.cpp">
+      <Filter>Trainers</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Trainers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,8 @@
+Player and Trainer Classes
+Battle Scene the uses above classes
+AOE attacks
+Items
+Evolution + more Moves
+More Pokemon + more Moves
+Route and World classes & random Encounters
+Text/cutscenes/story/the like

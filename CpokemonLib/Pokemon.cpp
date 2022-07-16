@@ -55,7 +55,9 @@ int Pokemon::GetSPD() {
 
 //Formula adapted from: https://bulbapedia.bulbagarden.net/wiki/Experience
 int Pokemon::GetEXPyeild() {
-	return (species.expYeild * level) / 7; //add in stuff like trainer exp and lucky egg later
+	int trainerBonus = 1.0f;
+	if (isTrainerPokemon) { trainerBonus = 1.5f; }
+	return (species.expYeild * level * trainerBonus) / 7; //add in stuff like trainer exp and lucky egg later
 }
 
 void Pokemon::CheckForLevelUp() {
@@ -109,7 +111,7 @@ std::string Pokemon::ToString() {
 }
 
 std::string Pokemon::GetTextHPbar() {
-	std::string string = "HP:";
+	std::string string = "HP:=";
 	int hpOutOfTen = ((float)currentHP / GetHP()) * 10.0f;
 	for (int i = 0; i < hpOutOfTen; i++) {
 		string += "=";

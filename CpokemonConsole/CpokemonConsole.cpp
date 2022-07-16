@@ -33,7 +33,7 @@ int main()
     PokemonBuilder pkmnBuilder;
     
     int chosenPokemon = rand() % 3;
-    Pokemon* pk1 = pkmnBuilder.BuildRegularPokemon(chosenPokemon, 5);
+    Pokemon* pk1 = pkmnBuilder.BuildWeakTrainerPokemon(chosenPokemon, 5);
     pk1->nickname = "Hero";
     chosenPokemon = rand() % 3;
     Pokemon* pk2 = pkmnBuilder.BuildRegularPokemon(chosenPokemon, 5);
@@ -70,7 +70,9 @@ int main()
 
         //resolve turn
         for (int i = 0; i < turns.size(); i++) {
-            turns[i].move->Invoke(turns[i].pokemon, turns[i].targets);
+            if (turns[i].pokemon->currentHP > 0) {
+                turns[i].move->Invoke(turns[i].pokemon, turns[i].targets);
+            }
         }
         if (pk1->nvStatus) {
             pk1->nvStatus->Upkeep();
@@ -81,7 +83,31 @@ int main()
     }
     //reward the winner with exp
     if (pk1->currentHP > 0) {
+        switch (pk2->species.evYeild)
+        {
+        case HP_STAT:
+            pk1->EVHP += pk2->species.evYeildAmount;
+            break;
+        case ATK_STAT:
+            pk1->EVATK += pk2->species.evYeildAmount;
+            break;
+        case DEF_STAT:
+            pk1->EVDEF += pk2->species.evYeildAmount;
+            break;
+        case SPATK_STAT:
+            pk1->EVSPATK += pk2->species.evYeildAmount;
+            break;
+        case SPDEF_STAT:
+            pk1->EVSPDEF += pk2->species.evYeildAmount;
+            break;
+        case SPD_STAT:
+            pk1->EVSPD += pk2->species.evYeildAmount;
+            break;
+        default:
+            break;
+        }
         pk1->exp += pk2->GetEXPyeild();
+        pk1->CheckForLevelUp();
     }
     std::cout << pk1->nickname << " HP: " << pk1->currentHP << "/" << pk1->GetHP() << std::endl;
     std::cout << pk2->nickname << " HP: " << pk2->currentHP << "/" << pk2->GetHP() << std::endl;

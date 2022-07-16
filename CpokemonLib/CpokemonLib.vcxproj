@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClInclude Include="AbilityBuilder.h" />
     <ClInclude Include="AbilityNames.h" />
+    <ClInclude Include="Battle.h" />
     <ClInclude Include="BurnStatusCondition.h" />
     <ClInclude Include="DataLoader.h" />
     <ClInclude Include="EggGroups.h" />
@@ -167,16 +168,19 @@
     <ClInclude Include="MoveFunction.h" />
     <ClInclude Include="MoveNames.h" />
     <ClInclude Include="Nature.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="PokedexInfo.h" />
     <ClInclude Include="Pokemon.h" />
     <ClInclude Include="PokemonBuilder.h" />
     <ClInclude Include="PokemonGenders.h" />
     <ClInclude Include="PokemonNames.h" />
     <ClInclude Include="PokemonSpecies.h" />
+    <ClInclude Include="SleepStatusCondition.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="StatusConditionBuilder.h" />
     <ClInclude Include="StatusConditionNames.h" />
     <ClInclude Include="StatusMoveEffects.h" />
+    <ClInclude Include="Trainer.h" />
     <ClInclude Include="TypeChart.h" />
     <ClInclude Include="Typings.h" />
   </ItemGroup>
@@ -188,8 +192,11 @@
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="MoveBuilder.cpp" />
     <ClCompile Include="NonVolatileStatusCondition.h" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Pokemon.cpp" />
+    <ClCompile Include="SleepStatusCondition.cpp" />
     <ClCompile Include="StatusConditionBuilder.cpp" />
+    <ClCompile Include="Trainer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pokemon.pkif" />

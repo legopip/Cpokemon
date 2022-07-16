@@ -17,6 +17,7 @@ public:
 	Pokemon();
 	~Pokemon();
 
+	bool isTrainerPokemon;
 	PokemonSpecies species;
 	PokemonGenders gender;
 	Ability* ability;
