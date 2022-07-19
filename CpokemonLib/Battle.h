@@ -11,15 +11,27 @@ struct TurnMovePair {
 
 class Battle {
 public:
+    Battle(Player* player, Trainer* trainer, bool isWildEncounter, bool isDoubleBattle);
+    ~Battle();
 
+    void ResolveBattle();
 
 private:
-    bool OrderTurns(TurnMovePair lhs, TurnMovePair rhs) {
-        if (lhs.move->priority == rhs.move->priority) {
-            return lhs.pokemon->GetSPD() > rhs.pokemon->GetSPD();
-        }
-        else {
-            return lhs.move->priority > rhs.move->priority;
-        }
-    }
+    bool isWildEncouter;
+    bool isDoubleBattle;
+
+    Player* player;
+    Trainer* enemy;
+
+    //pointer for the active pokemon;
+    Pokemon* playerActivePokemon;
+    Pokemon* enemyActivePokemon;
+    //for double battle
+    Pokemon* playerActivePokemon2;
+    Pokemon* enemyActivePokemon2;
+
+    void PrintBattleHUD();
+    void GiveRewards();
+
+    static bool OrderTurns(TurnMovePair lhs, TurnMovePair rhs);
 };

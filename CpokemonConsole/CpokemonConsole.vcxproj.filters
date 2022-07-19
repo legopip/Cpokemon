@@ -27,5 +27,8 @@
     <ClCompile Include="typeAttackTest.cpp">
       <Filter>Old</Filter>
     </ClCompile>
+    <ClCompile Include="creationAndCombatTest.cpp">
+      <Filter>Old</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

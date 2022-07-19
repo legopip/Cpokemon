@@ -32,6 +32,7 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		move->category = PHYSICAL_MOVE;
 		move->makesContact = true;
 		move->isSoundBased = false;
+		move->range = TARGETS_1ENEMY;
 
 		PhysicalAttackMove* attack = new PhysicalAttackMove();
 		attack->power = 40;
@@ -47,6 +48,7 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		move->category = PHYSICAL_MOVE;
 		move->makesContact = true;
 		move->isSoundBased = false;
+		move->range = TARGETS_1ENEMY;
 
 		PhysicalAttackMove* attack = new PhysicalAttackMove();
 		attack->power = 40;
@@ -62,6 +64,7 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		move->category = PHYSICAL_MOVE;
 		move->makesContact = true;
 		move->isSoundBased = false;
+		move->range = TARGETS_1ENEMY;
 
 		PhysicalAttackMove* attack = new PhysicalAttackMove();
 		attack->power = 40;
@@ -77,6 +80,7 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		move->category = STATUS_MOVE;
 		move->makesContact = false;
 		move->isSoundBased = true;
+		move->range = TARGETS_ALL_ENEMIES;
 
 		StatChangeEffect* statChange = new StatChangeEffect();
 		statChange->affectedStat = ATK_STAT;
@@ -94,6 +98,7 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		move->category = STATUS_MOVE;
 		move->makesContact = false;
 		move->isSoundBased = false;
+		move->range = TARGETS_ALL_ENEMIES;
 
 		StatChangeEffect* statChange = new StatChangeEffect();
 		statChange->affectedStat = DEF_STAT;
@@ -111,6 +116,7 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		move->category = STATUS_MOVE;
 		move->makesContact = false;
 		move->isSoundBased = false;
+		move->range = TARGETS_ALL_ENEMIES;
 
 		StatChangeEffect* statChange = new StatChangeEffect();
 		statChange->affectedStat = DEF_STAT;
@@ -128,6 +134,7 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		move->category = SPECIAL_MOVE;
 		move->makesContact = false;
 		move->isSoundBased = false;
+		move->range = TARGETS_1ENEMY;
 
 		SpecialAttackMove* attack = new SpecialAttackMove();
 		attack->power = 25;
@@ -146,6 +153,7 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		move->category = SPECIAL_MOVE;
 		move->makesContact = false;
 		move->isSoundBased = false;
+		move->range = TARGETS_1ENEMY;
 
 		SpecialAttackMove* attack = new SpecialAttackMove();
 		attack->power = 40;
@@ -167,6 +175,7 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		move->category = SPECIAL_MOVE;
 		move->makesContact = false;
 		move->isSoundBased = false;
+		move->range = TARGETS_1ENEMY;
 
 		SpecialAttackMove* attack = new SpecialAttackMove();
 		attack->power = 40;

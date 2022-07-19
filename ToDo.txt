@@ -5,4 +5,6 @@ Items
 Evolution + more Moves
 More Pokemon + more Moves
 Route and World classes & random Encounters
+Saving/Loading
+Catching Pokemon
 Text/cutscenes/story/the like

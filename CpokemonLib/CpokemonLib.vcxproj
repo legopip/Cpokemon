@@ -187,6 +187,7 @@
   <ItemGroup>
     <ClCompile Include="Ability.h" />
     <ClCompile Include="AbilityBuilder.cpp" />
+    <ClCompile Include="Battle.cpp" />
     <ClCompile Include="BurnStatusCondition.cpp" />
     <ClCompile Include="LowHPPowerUpAbility.cpp" />
     <ClCompile Include="Move.cpp" />

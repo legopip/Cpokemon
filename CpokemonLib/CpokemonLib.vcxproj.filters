@@ -176,6 +176,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>Trainers</Filter>
     </ClCompile>
+    <ClCompile Include="Battle.cpp">
+      <Filter>Battle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Pokemon.pkif">

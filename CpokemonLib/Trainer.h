@@ -16,6 +16,8 @@ public:
 
 	void AddPokemonToTeam(Pokemon* pokemon);
 
+	bool OutOfUseablePokemon();
+
 private:
 
 };

@@ -24,3 +24,10 @@ void Trainer::AddPokemonToTeam(Pokemon* pokemon) {
 		teamSize++;
 	}
 }
+
+bool Trainer::OutOfUseablePokemon() {
+	for (int i = 0; i < teamSize; i++) {
+		if (team[i]->currentHP > 0) { return false; }
+	}
+	return true;
+}
