@@ -31,6 +31,7 @@ private:
     Pokemon* enemyActivePokemon2;
 
     void PrintBattleHUD();
+    TurnMovePair SetUpEnemyTurn(Pokemon* enemyPk);
     void GiveRewards();
 
     static bool OrderTurns(TurnMovePair lhs, TurnMovePair rhs);

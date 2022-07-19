@@ -92,14 +92,11 @@ void Battle::ResolveBattle() {
         }
 
         //ai does this
-        TurnMovePair pk2turn;
-        pk2turn.pokemon = enemyActivePokemon;
-        pk2turn.move = enemyActivePokemon->knownMoves[pk2ChosenMove].move;
-        pk2turn.targets.push_back(playerActivePokemon);
+        
 
         std::vector<TurnMovePair> turns;
         turns.push_back(pk1turn);
-        turns.push_back(pk2turn);
+        turns.push_back(SetUpEnemyTurn(enemyActivePokemon));
         std::sort(turns.begin(), turns.end(), OrderTurns);
 
         //resolve turn
@@ -127,6 +124,67 @@ void Battle::PrintBattleHUD() {
     std::cout << playerActivePokemon->GetTextHPbar() << std::endl;
     std::cout << enemyActivePokemon->nickname << std::endl;
     std::cout << enemyActivePokemon->GetTextHPbar() << std::endl;
+}
+
+TurnMovePair Battle::SetUpEnemyTurn(Pokemon* enemyPk) {
+    TurnMovePair movePair;
+
+    int chosenMove = rand() % enemyPk->numberOfKnownMoves;
+    movePair.pokemon = enemyPk;
+    movePair.move = enemyPk->knownMoves[chosenMove].move;
+    
+    switch (enemyPk->knownMoves[chosenMove].move->range)
+    {
+    case TARGETS_SELF:
+        movePair.targets.push_back(enemyPk);
+        break;
+    case TARGETS_1ENEMY:
+        if (!isDoubleBattle) {
+            movePair.targets.push_back(playerActivePokemon);
+        }
+        else {
+            
+        }
+        break;
+    case TARGETS_1ALLY:
+        if (!isDoubleBattle) {
+            movePair.targets.push_back(enemyPk);
+        }
+        else {
+            
+        }
+        break;
+    case TARGETS_ALL_ENEMIES:
+        movePair.targets.push_back(playerActivePokemon);
+        if (isDoubleBattle) {
+            if (playerActivePokemon2) {
+                movePair.targets.push_back(playerActivePokemon2);
+            }
+        }
+        break;
+    case TARGETS_ALL_ALLIES:
+        movePair.targets.push_back(enemyPk);
+        if (isDoubleBattle) {
+            if (enemyActivePokemon2) {
+                movePair.targets.push_back(enemyActivePokemon2);
+            }
+        }
+        break;
+    case TARGETS_ALL_OTHERS:
+        movePair.targets.push_back(playerActivePokemon);
+        if (isDoubleBattle) {
+            if (enemyActivePokemon2) {
+                movePair.targets.push_back(enemyActivePokemon2);
+            }
+            if (playerActivePokemon2) {
+                movePair.targets.push_back(playerActivePokemon2);
+            }
+        }
+        break;
+    default:
+        break;
+    }
+    return movePair;
 }
 
 void Battle::GiveRewards() {
