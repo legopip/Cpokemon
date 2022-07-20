@@ -160,6 +160,7 @@
     <ClInclude Include="DataLoader.h" />
     <ClInclude Include="EggGroups.h" />
     <ClInclude Include="ExpCurves.h" />
+    <ClInclude Include="ItemEnums.h" />
     <ClInclude Include="LowHPPowerUpAbility.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="MoveBuilder.h" />

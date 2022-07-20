@@ -46,6 +46,9 @@
     <Filter Include="Battle">
       <UniqueIdentifier>{7c771c62-4617-4adb-9913-8213b78f56bf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Items">
+      <UniqueIdentifier>{6ac9799c-392e-4f02-b716-e0d6730419eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Typings.h">
@@ -137,6 +140,9 @@
     </ClInclude>
     <ClInclude Include="Battle.h">
       <Filter>Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemEnums.h">
+      <Filter>Items</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
