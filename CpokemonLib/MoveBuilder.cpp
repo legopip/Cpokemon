@@ -184,6 +184,64 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		move->AddEffect(attack);
 	}
 		break;
+	case GRASS_WHISTLE: {
+		move->name = "Grass Whistle";
+		move->type = GRASS_TYPE;
+		move->PP = 15;
+		move->category = STATUS_MOVE;
+		move->makesContact = false;
+		move->isSoundBased = true;
+		move->range = TARGETS_1ENEMY;
+
+		NVStatusEnemyEffect* nvStatusEffect = new NVStatusEnemyEffect();
+		nvStatusEffect->nvStatus = SLEEP_NV_STATUS;
+		nvStatusEffect->chance = 75;
+		nvStatusEffect->isIndependant = true;
+
+		move->AddEffect(nvStatusEffect);
+	}
+		break;
+	case HARDEN: {
+		move->name = "Harden";
+		move->type = NORMAL_TYPE;
+		move->PP = 30;
+		move->category = STATUS_MOVE;
+		move->makesContact = false;
+		move->isSoundBased = false;
+		move->range = TARGETS_SELF;
+
+		StatChangeEffect* statChange = new StatChangeEffect();
+		statChange->affectedStat = DEF_STAT;
+		statChange->chance = 100;
+		statChange->change = +1;
+		statChange->isIndependant = true;
+
+		move->AddEffect(statChange);
+	}
+		break;
+	case MUD_SHOT: {
+		move->name = "Mud Shot";
+		move->type = GROUND_TYPE;
+		move->PP = 15;
+		move->category = SPECIAL_MOVE;
+		move->makesContact = false;
+		move->isSoundBased = false;
+		move->range = TARGETS_1ENEMY;
+
+		SpecialAttackMove* attack = new SpecialAttackMove();
+		attack->power = 55;
+		attack->accuracy = 95;
+
+		StatChangeEffect* statChange = new StatChangeEffect();
+		statChange->affectedStat = SPD_STAT;
+		statChange->chance = 100;
+		statChange->change = -1;
+		statChange->isIndependant = false;
+
+		move->AddEffect(attack);
+		move->AddEffect(statChange);
+	}
+		break;
 	default:
 		break;
 	}

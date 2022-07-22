@@ -1,7 +1,7 @@
 Player and Trainer Classes X
 Battle Scene the uses above classes X
 AOE attacks X
-Items
+Items (kinda done)
 Evolution + more Moves
 More Pokemon + more Moves
 Route and World classes & random Encounters

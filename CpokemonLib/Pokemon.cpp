@@ -9,6 +9,7 @@ Pokemon::Pokemon() {
 	SPATKmod = 0;
 	SPDEFmod = 0;
 	SPDmod = 0;
+	cleanUpNVStatus = false;
 }
 
 Pokemon::~Pokemon() {

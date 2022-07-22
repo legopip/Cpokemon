@@ -4,6 +4,7 @@
 
 #include "Nature.h"
 #include "PokemonGenders.h"
+#include "Item.h"
 #include "NonVolatileStatusCondition.h"
 
 class Ability;
@@ -22,6 +23,8 @@ public:
 	PokemonGenders gender;
 	Ability* ability;
 	NonVolatileStatusCondition* nvStatus; //A pokemon can only be affected by one of these at a time
+	bool cleanUpNVStatus;
+	Item* heldItem;
 
 	int currentHP;
 

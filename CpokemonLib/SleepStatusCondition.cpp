@@ -3,6 +3,8 @@
 SleepStatusCondition::SleepStatusCondition(Pokemon* pokemon) {
 	affectedPokemon = pokemon;
 
+	name = SLEEP_NV_STATUS;
+
 	turnCounter = rand() % 3 + 3;
 
 	ATKmod = 1.5f;
@@ -19,6 +21,6 @@ SleepStatusCondition::~SleepStatusCondition() {
 void SleepStatusCondition::Upkeep() {
 	turnCounter--;
 	if (turnCounter == 0) {
-		//update a flag in the pokemon to tell it to remove the status condition
+		affectedPokemon->cleanUpNVStatus = true;
 	}
 }

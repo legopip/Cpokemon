@@ -144,6 +144,9 @@
     <ClInclude Include="ItemEnums.h">
       <Filter>Items</Filter>
     </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Items</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pokemon.cpp">

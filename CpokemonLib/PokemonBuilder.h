@@ -76,10 +76,18 @@ public:
 			pokemon->numberOfKnownMoves = 4;
 			for (int i = 0; i < 4; i++) {
 				KnownMove knownMove;
-				knownMove.move = moveBuilder.BuildMove(pokemon->species.moveset[moveIndex - 1 - i].moveName);
+				knownMove.move = moveBuilder.BuildMove(pokemon->species.moveset[moveIndex - 4 + i].moveName);
 				knownMove.currentPP = knownMove.move->PP;
 				pokemon->knownMoves[i] = knownMove;
 			}
+		}
+
+		for (int i = 0; i < pokemon->species.possibleHeldItems.size(); i++) {
+			int chance = rand() % 100 + 1;
+			if (chance > pokemon->species.possibleHeldItems[i].chance) { continue; }
+			
+			//make the item and set it to be the pokemon's held item
+			break;
 		}
 
 		pokemon->currentHP = pokemon->GetHP();

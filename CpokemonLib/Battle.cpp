@@ -102,11 +102,23 @@ void Battle::ResolveBattle() {
         //resolve turn
         for (int i = 0; i < turns.size(); i++) {
             if (turns[i].pokemon->currentHP > 0) {
+                if (turns[i].pokemon->cleanUpNVStatus) {
+                    delete turns[i].pokemon->nvStatus;
+                    turns[i].pokemon->cleanUpNVStatus = false;
+                    std::cout << turns[i].pokemon->nickname << " is all better!" << std::endl;
+                }
+                if (turns[i].pokemon->nvStatus) {
+                    if (turns[i].pokemon->nvStatus->name == SLEEP_NV_STATUS) {
+                        std::cout << turns[i].pokemon->nickname << " is fast asleep!" << std::endl;
+                        continue;
+                    }
+                }
                 turns[i].move->Invoke(turns[i].pokemon, turns[i].targets);
             }
         }
         if (playerActivePokemon->nvStatus) {
             playerActivePokemon->nvStatus->Upkeep();
+            
         }
         if (enemyActivePokemon->nvStatus) {
             enemyActivePokemon->nvStatus->Upkeep();

@@ -49,7 +49,7 @@ public:
             else if (effectiveness > 1.0f) {
                 std::cout << "It's super effective!" << std::endl;
             }
-            else if (effectiveness > 1.0f) {
+            else if (effectiveness < 1.0f) {
                 std::cout << "It's not very effective..." << std::endl;
             }
 
@@ -112,7 +112,7 @@ public:
                 std::cout << "It had no effect." << std::endl;
             }else if (effectiveness > 1.0f) {
                 std::cout << "It's super effective!" << std::endl;
-            }else if (effectiveness > 1.0f) {
+            }else if (effectiveness < 1.0f) {
                 std::cout << "It's not very effective..." << std::endl;
             }
 
