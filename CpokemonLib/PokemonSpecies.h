@@ -10,12 +10,20 @@
 #include "ExpCurves.h"
 #include "MoveNames.h"
 #include "AbilityNames.h"
+#include "ItemEnums.h"
 
 class Move;
 struct LevelMovePair {
 	int level;
 	MoveNames moveName;
 };
+
+struct HeldItemData {
+	ItemTypes itemType;
+	int itemCode;
+	int chance; // out of 100
+};
+
 class PokemonSpecies {
 public:
 	int nationalDexNumber;
@@ -47,6 +55,8 @@ public:
 	
 	int captureRate;
 	int baseFriendship;
+
+	std::vector<HeldItemData> possibleHeldItems;
 
 	float height;
 	float weight;
