@@ -167,9 +167,9 @@
     <ClInclude Include="MoveBuilder.h" />
     <ClInclude Include="DamagingMoveEffects.h" />
     <ClInclude Include="MoveEffect.h" />
-    <ClInclude Include="MoveFunction.h" />
     <ClInclude Include="MoveNames.h" />
     <ClInclude Include="Nature.h" />
+    <ClInclude Include="OddMoveEffects.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PokedexInfo.h" />
     <ClInclude Include="Pokemon.h" />

@@ -1,7 +1,7 @@
 #include "MoveBuilder.h"
 #include "DamagingMoveEffects.h"
 #include "StatusMoveEffects.h"
-
+#include "OddMoveEffects.h"
 
 MoveBuilder::MoveBuilder()
 {
@@ -235,6 +235,57 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		StatChangeEffect* statChange = new StatChangeEffect();
 		statChange->affectedStat = SPD_STAT;
 		statChange->chance = 100;
+		statChange->change = -1;
+		statChange->isIndependant = false;
+
+		move->AddEffect(attack);
+		move->AddEffect(statChange);
+	}
+		break;
+	case COPY_CAT: { //WARNING THIS ISN"T COMPLETE (It doesn't Aim correctly)
+		move->name = "Copy Cat";
+		move->type = NORMAL_TYPE;
+		move->PP = 20;
+		move->category = STATUS_MOVE;
+		move->makesContact = false;
+		move->isSoundBased = false;
+		move->range = TARGETS_1ENEMY;
+
+		CopyMoveEffect* copyEffect = new CopyMoveEffect();
+
+		move->AddEffect(copyEffect);
+	}
+		break;
+	case RECYCLE: {
+		move->name = "Recycle";
+		move->type = NORMAL_TYPE;
+		move->PP = 10;
+		move->category = STATUS_MOVE;
+		move->makesContact = false;
+		move->isSoundBased = false;
+		move->range = TARGETS_SELF;
+
+		RecycleMoveEffect* recycleEffect = new RecycleMoveEffect();
+
+		move->AddEffect(recycleEffect);
+	}
+		break;
+	case BUBBLEBEAM: {
+		move->name = "Bubblebeam";
+		move->type = WATER_TYPE;
+		move->PP = 20;
+		move->category = SPECIAL_MOVE;
+		move->makesContact = false;
+		move->isSoundBased = false;
+		move->range = TARGETS_1ENEMY;
+
+		SpecialAttackMove* attack = new SpecialAttackMove();
+		attack->power = 65;
+		attack->accuracy = 100;
+
+		StatChangeEffect* statChange = new StatChangeEffect();
+		statChange->affectedStat = SPD_STAT;
+		statChange->chance = 10;
 		statChange->change = -1;
 		statChange->isIndependant = false;
 

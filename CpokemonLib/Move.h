@@ -20,7 +20,13 @@ enum MoveRange {
 	TARGETS_ALL_OTHERS
 };
 
-class Move : public MoveFunction {
+struct MoveSummary {
+	int damageTotal;
+	std::vector<bool> hits;
+	Move* lastUsedMove;
+};
+
+class Move {
 public:
 	~Move();
 	std::string name;

@@ -49,6 +49,9 @@
     <Filter Include="Items">
       <UniqueIdentifier>{6ac9799c-392e-4f02-b716-e0d6730419eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Moves\MoveEffects">
+      <UniqueIdentifier>{93a03431-1c90-4b42-ae62-a1177c8e4133}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Typings.h">
@@ -70,12 +73,6 @@
       <Filter>ConstStuff</Filter>
     </ClInclude>
     <ClInclude Include="Move.h">
-      <Filter>Moves</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveFunction.h">
-      <Filter>Moves</Filter>
-    </ClInclude>
-    <ClInclude Include="DamagingMoveEffects.h">
       <Filter>Moves</Filter>
     </ClInclude>
     <ClInclude Include="Stats.h">
@@ -117,12 +114,6 @@
     <ClInclude Include="StatusConditionNames.h">
       <Filter>StatusConditions</Filter>
     </ClInclude>
-    <ClInclude Include="StatusMoveEffects.h">
-      <Filter>Moves</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveEffect.h">
-      <Filter>Moves</Filter>
-    </ClInclude>
     <ClInclude Include="BurnStatusCondition.h">
       <Filter>StatusConditions</Filter>
     </ClInclude>
@@ -146,6 +137,18 @@
     </ClInclude>
     <ClInclude Include="Item.h">
       <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="DamagingMoveEffects.h">
+      <Filter>Moves\MoveEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusMoveEffects.h">
+      <Filter>Moves\MoveEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveEffect.h">
+      <Filter>Moves\MoveEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="OddMoveEffects.h">
+      <Filter>Moves\MoveEffects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

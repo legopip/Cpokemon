@@ -25,6 +25,7 @@ public:
 	NonVolatileStatusCondition* nvStatus; //A pokemon can only be affected by one of these at a time
 	bool cleanUpNVStatus;
 	Item* heldItem;
+	Item* oldHeldItem;
 
 	int currentHP;
 

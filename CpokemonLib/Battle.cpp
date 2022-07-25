@@ -113,7 +113,10 @@ void Battle::ResolveBattle() {
                         continue;
                     }
                 }
-                turns[i].move->Invoke(turns[i].pokemon, turns[i].targets);
+                MoveSummary sum;
+                sum.lastUsedMove = lastUsedMove;
+                turns[i].move->Invoke(turns[i].pokemon, turns[i].targets, sum);
+                lastUsedMove = turns[i].move;
             }
         }
         if (playerActivePokemon->nvStatus) {

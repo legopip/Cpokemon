@@ -20,6 +20,8 @@ private:
     bool isWildEncouter;
     bool isDoubleBattle;
 
+    Move* lastUsedMove;
+
     Player* player;
     Trainer* enemy;
 

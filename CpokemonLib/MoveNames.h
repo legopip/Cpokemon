@@ -12,5 +12,11 @@ enum MoveNames {
 	WATER_GUN = 8,
 	GRASS_WHISTLE = 9,
 	HARDEN = 10,
-	MUD_SHOT = 11
+	MUD_SHOT = 11,
+	COPY_CAT = 12,
+	RECYCLE = 13,
+	BUBBLEBEAM = 14,
+	GROWTH = 15,
+	FLASH = 16, 
+	AQUA_JET = 17
 };
