@@ -177,14 +177,19 @@
     <ClInclude Include="PokemonGenders.h" />
     <ClInclude Include="PokemonNames.h" />
     <ClInclude Include="PokemonSpecies.h" />
+    <ClInclude Include="RainyWeather.h" />
     <ClInclude Include="SleepStatusCondition.h" />
+    <ClInclude Include="SnowyWeather.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="StatusConditionBuilder.h" />
     <ClInclude Include="StatusConditionNames.h" />
     <ClInclude Include="StatusMoveEffects.h" />
+    <ClInclude Include="SunnyWeather.h" />
     <ClInclude Include="Trainer.h" />
     <ClInclude Include="TypeChart.h" />
     <ClInclude Include="Typings.h" />
+    <ClInclude Include="Weather.h" />
+    <ClInclude Include="WeatherNames.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ability.h" />
@@ -200,6 +205,7 @@
     <ClCompile Include="SleepStatusCondition.cpp" />
     <ClCompile Include="StatusConditionBuilder.cpp" />
     <ClCompile Include="Trainer.cpp" />
+    <ClCompile Include="Weather.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pokemon.pkif" />

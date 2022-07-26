@@ -4,6 +4,7 @@
 
 #include "MoveEffect.h"
 #include "Typings.h"
+#include "WeatherNames.h"
 
 enum MoveCategory {
 	STATUS_MOVE,
@@ -24,6 +25,7 @@ struct MoveSummary {
 	int damageTotal;
 	std::vector<bool> hits;
 	Move* lastUsedMove;
+	WeatherNames currentWeather;
 };
 
 class Move {

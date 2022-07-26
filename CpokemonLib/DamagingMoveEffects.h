@@ -5,7 +5,7 @@
 class PhysicalAttackMove : public MoveEffect {
 public:
 	int power;
-	int accuracy;
+	int accuracy; //-1 for always hits moves
 
     void Invoke(Pokemon* user, std::vector<Pokemon*> targets, MoveSummary& summery) {
         for (int i = 0; i < targets.size(); i++) {
@@ -13,16 +13,18 @@ public:
                 targets[i]->species.type1, targets[i]->species.type2);
 
             //Check if it hits
-            int hitChance = rand() % 100 + 1;
-            if (hitChance > accuracy) {
-                summery.hits.push_back(false);
-                if (targets.size() == 1) {
-                    std::cout << "The attack missed!" << std::endl;
+            if (accuracy > -1) { 
+                int hitChance = rand() % 100 + 1;
+                if (hitChance > accuracy) {
+                    summery.hits.push_back(false);
+                    if (targets.size() == 1) {
+                        std::cout << "The attack missed!" << std::endl;
+                    }
+                    else {
+                        std::cout << "The attack missed the opponent " << targets[i]->species.name << std::endl;
+                    }
+                    continue;
                 }
-                else {
-                    std::cout << "The attack missed the opponent " << targets[i]->species.name << std::endl;
-                }
-                continue;
             }
             summery.hits.push_back(true);
 
@@ -70,7 +72,7 @@ public:
 class SpecialAttackMove : public MoveEffect {
 public:
     int power;
-    int accuracy;
+    int accuracy; //-1 for always hits moves
 
     void Invoke(Pokemon* user, std::vector<Pokemon*> targets, MoveSummary& summery) {
         for (int i = 0; i < targets.size(); i++) {
@@ -78,16 +80,18 @@ public:
                 targets[i]->species.type1, targets[i]->species.type2);
 
             //Check if it hits
-            int hitChance = rand() % 100 + 1;
-            if (hitChance > accuracy) {
-                summery.hits.push_back(false);
-                if (targets.size() == 1) {
-                    std::cout << "The attack missed!" << std::endl;
+            if (accuracy > -1) {
+                int hitChance = rand() % 100 + 1;
+                if (hitChance > accuracy) {
+                    summery.hits.push_back(false);
+                    if (targets.size() == 1) {
+                        std::cout << "The attack missed!" << std::endl;
+                    }
+                    else {
+                        std::cout << "The attack missed the opponent " << targets[i]->species.name << std::endl;
+                    }
+                    continue;
                 }
-                else {
-                    std::cout << "The attack missed the opponent " << targets[i]->species.name << std::endl;
-                }
-                continue;
             }
             summery.hits.push_back(true);
 

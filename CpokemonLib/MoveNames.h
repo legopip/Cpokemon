@@ -16,7 +16,7 @@ enum MoveNames {
 	COPY_CAT = 12,
 	RECYCLE = 13,
 	BUBBLEBEAM = 14,
-	GROWTH = 15,
-	FLASH = 16, 
-	AQUA_JET = 17
+	MAGICAL_LEAF = 15,
+	FLAME_WHEEL = 16, 
+	RAIN_DANCE = 17
 };

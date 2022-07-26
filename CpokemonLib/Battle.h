@@ -2,6 +2,7 @@
 
 #include "Player.h"
 #include "Move.h"
+#include "WeatherNames.h"
 
 struct TurnMovePair {
     Pokemon* pokemon;
@@ -19,6 +20,8 @@ public:
 private:
     bool isWildEncouter;
     bool isDoubleBattle;
+
+    WeatherNames currentWeather;
 
     Move* lastUsedMove;
 

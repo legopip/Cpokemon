@@ -8,6 +8,7 @@ Battle::Battle(Player* player, Trainer* trainer, bool isWildEncounter, bool isDo
     this->enemy = trainer;
     this->isDoubleBattle = isDoubleBattle;
 
+    currentWeather = CLEAR_WEATHER;
 }
 
 Battle::~Battle() {
@@ -115,7 +116,9 @@ void Battle::ResolveBattle() {
                 }
                 MoveSummary sum;
                 sum.lastUsedMove = lastUsedMove;
+                sum.currentWeather = currentWeather;
                 turns[i].move->Invoke(turns[i].pokemon, turns[i].targets, sum);
+                currentWeather = sum.currentWeather;
                 lastUsedMove = turns[i].move;
             }
         }
@@ -126,6 +129,7 @@ void Battle::ResolveBattle() {
         if (enemyActivePokemon->nvStatus) {
             enemyActivePokemon->nvStatus->Upkeep();
         }
+        //weather Upkeep
     }
     //reward the winner with exp
     GiveRewards();

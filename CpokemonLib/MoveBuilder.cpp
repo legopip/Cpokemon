@@ -293,6 +293,44 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		move->AddEffect(statChange);
 	}
 		break;
+	case MAGICAL_LEAF: {
+		move->name = "Magical Leaf";
+		move->type = GRASS_TYPE;
+		move->PP = 20;
+		move->category = SPECIAL_MOVE;
+		move->makesContact = false;
+		move->isSoundBased = false;
+		move->range = TARGETS_1ENEMY;
+
+		SpecialAttackMove* attack = new SpecialAttackMove();
+		attack->power = 60;
+		attack->accuracy = -1;
+
+		move->AddEffect(attack);
+	}
+		break;
+	case FLAME_WHEEL: {
+		move->name = "Flame Wheel";
+		move->type = FIRE_TYPE;
+		move->PP = 25;
+		move->category = PHYSICAL_MOVE;
+		move->makesContact = true;
+		move->isSoundBased = false;
+		move->range = TARGETS_1ENEMY;
+
+		PhysicalAttackMove* attack = new PhysicalAttackMove();
+		attack->power = 60;
+		attack->accuracy = 100;
+
+		NVStatusEnemyEffect* nvStatusEffect = new NVStatusEnemyEffect();
+		nvStatusEffect->nvStatus = BURN_NV_STATUS;
+		nvStatusEffect->chance = 10;
+		nvStatusEffect->isIndependant = false;
+
+		move->AddEffect(attack);
+		move->AddEffect(nvStatusEffect);
+	}
+		break;
 	default:
 		break;
 	}
