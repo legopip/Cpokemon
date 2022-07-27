@@ -2,6 +2,8 @@
 
 #include "MoveEffect.h"
 
+#include "WeatherLookUp.h"
+
 class PhysicalAttackMove : public MoveEffect {
 public:
 	int power;
@@ -61,6 +63,7 @@ public:
                 * critical * randomness * effectiveness * STAB;
 
             //std::cout << "Dealing " << damage << " damage" << std::endl;
+            damage *= weatherLookUp.weather[summery.currentWeather]->GetMoveDamageModifier(*type);
 
             targets[i]->currentHP -= damage;
 
@@ -97,7 +100,8 @@ public:
 
             //get the attacker and Defender Data
             int attackerATK = user->GetSPATK();
-            int defenderDEF = targets[i]->GetSPDEF();
+            int defenderDEF = targets[i]->GetSPDEF() 
+                * weatherLookUp.weather[summery.currentWeather]->GetSPDEFModifier(targets[1]->species.type1, targets[1]->species.type2);
             int attackerLVL = user->level;
             float STAB = 1.0f;
             if (*type == user->species.type1 || *type == user->species.type1) {
@@ -126,6 +130,7 @@ public:
                 * critical * randomness * effectiveness * STAB;
 
             //std::cout << "Dealing " << damage << " damage" << std::endl;
+            damage *= weatherLookUp.weather[summery.currentWeather]->GetMoveDamageModifier(*type);
 
             targets[i]->currentHP -= damage;
 

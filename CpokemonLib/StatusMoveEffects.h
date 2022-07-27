@@ -2,6 +2,7 @@
 
 #include "MoveEffect.h"
 #include "StatusConditionBuilder.h"
+#include "WeatherLookUp.h"
 
 class StatChangeEffect : public MoveEffect {
 public:
@@ -129,6 +130,7 @@ public :
             return;
         }
         //tell the weather to be limited
+        weatherLookUp.weather[weatherType]->SetupLimit();
 
         summery.currentWeather = weatherType;
     }

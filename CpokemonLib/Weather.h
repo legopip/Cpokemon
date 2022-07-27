@@ -15,11 +15,12 @@ public:
 	~Weather();
 
 	virtual float GetMoveDamageModifier(Typings type);
-	virtual float GetSPDEFModifier(Typings Type);
+	virtual float GetSPDEFModifier(Typings Type1, Typings type2);
 	
 	virtual void SetupLimit(bool extended = false);
+	void CleanUpLimit();
 	virtual void Upkeep(std::vector<Pokemon*> affectedPokemon);
-private:
+protected:
 	bool isLimitted;
 	int turnLimit;
 

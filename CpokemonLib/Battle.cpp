@@ -2,6 +2,8 @@
 
 #include <algorithm>
 
+#include "WeatherLookUp.h"
+
 Battle::Battle(Player* player, Trainer* trainer, bool isWildEncounter, bool isDoubleBattle) {
     this->isWildEncouter = isWildEncounter;
     this->player = player;
@@ -130,9 +132,18 @@ void Battle::ResolveBattle() {
             enemyActivePokemon->nvStatus->Upkeep();
         }
         //weather Upkeep
+        std::vector<Pokemon*> currentPokemon;
+        currentPokemon.push_back(playerActivePokemon);
+        currentPokemon.push_back(enemyActivePokemon);
+        weatherLookUp.weather[currentWeather]->Upkeep(currentPokemon);
+        if (weatherLookUp.weather[currentWeather]->cleanUpFlag) {
+            currentWeather = CLEAR_WEATHER;
+        }
     }
     //reward the winner with exp
     GiveRewards();
+    //in case any non-persisting weather is still in effect
+    weatherLookUp.weather[currentWeather]->CleanUpLimit();
 }
 
 

@@ -8,7 +8,7 @@ public:
 	~SunnyWeather();
 
 	float GetMoveDamageModifier(Typings type);
-	float GetSPDEFModifier(Typings Type);
+	float GetSPDEFModifier(Typings Type1, Typings type2);
 
 	void SetupLimit(bool extended = false);
 	void Upkeep(std::vector<Pokemon*> affectedPokemon);

@@ -178,6 +178,7 @@
     <ClInclude Include="PokemonNames.h" />
     <ClInclude Include="PokemonSpecies.h" />
     <ClInclude Include="RainyWeather.h" />
+    <ClInclude Include="SandyWeather.h" />
     <ClInclude Include="SleepStatusCondition.h" />
     <ClInclude Include="SnowyWeather.h" />
     <ClInclude Include="Stats.h" />
@@ -189,6 +190,7 @@
     <ClInclude Include="TypeChart.h" />
     <ClInclude Include="Typings.h" />
     <ClInclude Include="Weather.h" />
+    <ClInclude Include="WeatherLookUp.h" />
     <ClInclude Include="WeatherNames.h" />
   </ItemGroup>
   <ItemGroup>
@@ -202,8 +204,12 @@
     <ClCompile Include="NonVolatileStatusCondition.h" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Pokemon.cpp" />
+    <ClCompile Include="RainyWeather.cpp" />
+    <ClCompile Include="SandyWeather.cpp" />
     <ClCompile Include="SleepStatusCondition.cpp" />
+    <ClCompile Include="SnowyWeather.cpp" />
     <ClCompile Include="StatusConditionBuilder.cpp" />
+    <ClCompile Include="SunnyWeather.cpp" />
     <ClCompile Include="Trainer.cpp" />
     <ClCompile Include="Weather.cpp" />
   </ItemGroup>

@@ -168,6 +168,12 @@
     <ClInclude Include="SnowyWeather.h">
       <Filter>Weather</Filter>
     </ClInclude>
+    <ClInclude Include="SandyWeather.h">
+      <Filter>Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="WeatherLookUp.h">
+      <Filter>Weather</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pokemon.cpp">
@@ -210,6 +216,18 @@
       <Filter>Battle</Filter>
     </ClCompile>
     <ClCompile Include="Weather.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="SunnyWeather.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="SandyWeather.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="SnowyWeather.cpp">
+      <Filter>Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="RainyWeather.cpp">
       <Filter>Weather</Filter>
     </ClCompile>
   </ItemGroup>
