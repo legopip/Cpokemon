@@ -20,7 +20,7 @@ float SnowyWeather::GetSPDEFModifier(Typings Type1, Typings type2) {
 	return 1.0f;
 }
 
-void SnowyWeather::SetupLimit(bool extended = false) {
+void SnowyWeather::SetupLimit(bool extended) {
 	turnLimit = rand() % 3 + 3;
 	if (extended) { turnLimit += 2; }
 

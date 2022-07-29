@@ -20,7 +20,7 @@ float SandyWeather::GetSPDEFModifier(Typings Type1, Typings type2) {
 	return 1.0f;
 }
 
-void SandyWeather::SetupLimit(bool extended = false) {
+void SandyWeather::SetupLimit(bool extended) {
 	turnLimit = rand() % 3 + 3;
 	if (extended) { turnLimit += 2; }
 

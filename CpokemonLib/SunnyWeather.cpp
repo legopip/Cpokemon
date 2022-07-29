@@ -21,7 +21,7 @@ float SunnyWeather::GetSPDEFModifier(Typings Type1, Typings type2) {
 	return 1.0f;
 }
 
-void SunnyWeather::SetupLimit(bool extended = false) {
+void SunnyWeather::SetupLimit(bool extended) {
 	turnLimit = rand() % 3 + 3;
 	if (extended) { turnLimit += 2; }
 

@@ -19,7 +19,7 @@ float Weather::GetSPDEFModifier(Typings Type1, Typings type2) {
 	return 1.0f;
 }
 
-void Weather::SetupLimit(bool extended = false) {
+void Weather::SetupLimit(bool extended) {
 	//since this is the default weather is will never be on a timer 
 }
 

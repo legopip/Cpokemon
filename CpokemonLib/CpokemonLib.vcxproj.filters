@@ -55,6 +55,9 @@
     <Filter Include="Weather">
       <UniqueIdentifier>{82ed895d-d6d8-4532-a274-4075880bd7f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pokemon\Evolution">
+      <UniqueIdentifier>{9d1b6796-d1a7-48a7-9f5d-9a63e8f8b95d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Typings.h">
@@ -173,6 +176,18 @@
     </ClInclude>
     <ClInclude Include="WeatherLookUp.h">
       <Filter>Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="EvolutionMethod.h">
+      <Filter>Pokemon\Evolution</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelUpEvolution.h">
+      <Filter>Pokemon\Evolution</Filter>
+    </ClInclude>
+    <ClInclude Include="EvolutionMethodTypes.h">
+      <Filter>Pokemon\Evolution</Filter>
+    </ClInclude>
+    <ClInclude Include="AllPokemon.h">
+      <Filter>Data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

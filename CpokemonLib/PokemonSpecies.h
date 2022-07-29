@@ -11,6 +11,7 @@
 #include "MoveNames.h"
 #include "AbilityNames.h"
 #include "ItemEnums.h"
+#include "EvolutionMethod.h"
 
 class Move;
 struct LevelMovePair {
@@ -53,6 +54,8 @@ public:
 	Stats evYeild;
 	int evYeildAmount;
 	
+	std::vector<EvolutionMethod*> evolutions;
+
 	int captureRate;
 	int baseFriendship;
 
@@ -67,4 +70,10 @@ public:
 	std::vector<LevelMovePair> moveset;
 
 	std::string description;
+
+	~PokemonSpecies() {
+		for (int i = evolutions.size() - 1; i >= 0; i--) {
+			delete evolutions[i];
+		}
+	}
 };

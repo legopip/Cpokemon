@@ -6,10 +6,11 @@
 #include <sstream>
 #include <filesystem>
 
-#include "PokemonSpecies.h"
+#include "EvolutionMethodTypes.h"
+#include "LevelUpEvolution.h"
 
+#include "AllPokemon.h"
 
-static std::vector<PokemonSpecies> pokemonSpecies;
 
 class DataLoader {
 public:
@@ -78,6 +79,23 @@ private:
 					pokemon.evYeild = (Stats)std::stoi(tokens[3]);
 					pokemon.evYeildAmount = std::stoi(tokens[4]);
 
+					//Evolution
+					std::getline(file, in);
+					tokens = Split(in, ':');
+					for (int i = 1; i < tokens.size(); i++) {
+						std::vector<std::string> evoData = Split(tokens[i], ',');
+						EvolutionMethodTypes evoMethod = (EvolutionMethodTypes)std::stoi(evoData[0]);
+						switch (evoMethod)
+						{
+						case EVOLVE_ON_LEVEL:
+							pokemon.evolutions.push_back(new LevelUpEvolution(
+								(PokemonNames)std::stoi(evoData[1]), std::stoi(evoData[2])));
+							break;
+						default:
+							break;
+						}
+					}
+
 					//catch stuff
 					std::getline(file, in);
 					tokens = Split(in, ':');
@@ -121,7 +139,7 @@ private:
 					tokens = Split(in, ':');
 					pokemon.description = tokens[1];
 
-					pokemonSpecies.push_back(pokemon);
+					pokemonSpecies[(PokemonNames)pokemon.nationalDexNumber] = pokemon;
 				}
 			}
 		}

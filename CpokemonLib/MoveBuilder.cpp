@@ -331,6 +331,16 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		move->AddEffect(nvStatusEffect);
 	}
 		break;
+	case RAIN_DANCE: {
+		move->name = "Rain Dance";
+		move->type = WATER_TYPE;
+		move->PP = 5;
+		move->category = STATUS_MOVE;
+		move->makesContact = true;
+		move->isSoundBased = false;
+		move->range = TARGETS_SELF;
+	}
+		break;
 	default:
 		break;
 	}

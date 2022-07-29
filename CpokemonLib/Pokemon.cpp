@@ -67,6 +67,11 @@ void Pokemon::CheckForLevelUp() {
 			std::cout << nickname << " leveled up!" << std::endl;
 			int oldHp = GetHP();
 			level++;
+			for (int i = 0; i < species.evolutions.size(); i++) {
+				if (species.evolutions[i]->TryToEvole(this)) {
+					break;
+				}
+			}
 			int newHp = GetHP();
 			currentHP += newHp - oldHp;
 			if (level < 100) {

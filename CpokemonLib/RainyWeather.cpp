@@ -21,7 +21,7 @@ float RainyWeather::GetSPDEFModifier(Typings Type1, Typings type2) {
 	return 1.0f;
 }
 
-void RainyWeather::SetupLimit(bool extended = false) {
+void RainyWeather::SetupLimit(bool extended) {
 	turnLimit = rand() % 3 + 3; 
 	if (extended) { turnLimit += 2; }
 

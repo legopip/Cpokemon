@@ -155,13 +155,17 @@
   <ItemGroup>
     <ClInclude Include="AbilityBuilder.h" />
     <ClInclude Include="AbilityNames.h" />
+    <ClInclude Include="AllPokemon.h" />
     <ClInclude Include="Battle.h" />
     <ClInclude Include="BurnStatusCondition.h" />
     <ClInclude Include="DataLoader.h" />
     <ClInclude Include="EggGroups.h" />
+    <ClInclude Include="EvolutionMethod.h" />
+    <ClInclude Include="EvolutionMethodTypes.h" />
     <ClInclude Include="ExpCurves.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemEnums.h" />
+    <ClInclude Include="LevelUpEvolution.h" />
     <ClInclude Include="LowHPPowerUpAbility.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="MoveBuilder.h" />

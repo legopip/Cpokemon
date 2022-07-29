@@ -22,11 +22,11 @@ int main()
     Trainer* trainer = new Trainer("Test", "Placeholder");
 
     int chosenPokemon = rand() % 3;
-    Pokemon* pk1 = pkmnBuilder.BuildWeakTrainerPokemon(chosenPokemon, 15);
+    Pokemon* pk1 = pkmnBuilder.BuildWeakTrainerPokemon(TAPID, 15);
     pk1->nickname = "Hero";
     player->AddPokemonToTeam(pk1);
     chosenPokemon = rand() % 3;
-    Pokemon* pk2 = pkmnBuilder.BuildRegularPokemon(chosenPokemon, 15);
+    Pokemon* pk2 = pkmnBuilder.BuildRegularPokemon(MOALT, 15);
     trainer->AddPokemonToTeam(pk2);
 
     std::cout << pk1->ToString() << std::endl;

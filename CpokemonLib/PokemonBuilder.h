@@ -8,10 +8,10 @@
 class PokemonBuilder {
 public:
 
-	Pokemon* BuildRegularPokemon(int index, int level) {
+	Pokemon* BuildRegularPokemon(PokemonNames species, int level) {
 		Pokemon* pokemon = new Pokemon();
 
-		pokemon->species = pokemonSpecies[index];
+		pokemon->species = pokemonSpecies[species];
 		pokemon->EVHP = 0;
 		pokemon->EVATK = 0;
 		pokemon->EVDEF = 0;
@@ -95,8 +95,8 @@ public:
 		return pokemon;
 	}
 
-	Pokemon* BuildWeakTrainerPokemon(int index, int level) {
-		Pokemon* pokemon = BuildRegularPokemon(index, level);
+	Pokemon* BuildWeakTrainerPokemon(PokemonNames species, int level) {
+		Pokemon* pokemon = BuildRegularPokemon(species, level);
 		pokemon->isTrainerPokemon = true;
 		return pokemon;
 	}
