@@ -17,7 +17,7 @@ public:
             //Check if it hits
             if (accuracy > -1) { 
                 int hitChance = rand() % 100 + 1;
-                if (hitChance > accuracy) {
+                if (hitChance > (accuracy + 10 * (user->ACCmod - targets[i]->EVAmod))) {
                     summery.hits.push_back(false);
                     if (targets.size() == 1) {
                         std::cout << "The attack missed!" << std::endl;
@@ -85,7 +85,7 @@ public:
             //Check if it hits
             if (accuracy > -1) {
                 int hitChance = rand() % 100 + 1;
-                if (hitChance > accuracy) {
+                if (hitChance > (accuracy + 10 * (user->ACCmod - targets[i]->EVAmod))) {
                     summery.hits.push_back(false);
                     if (targets.size() == 1) {
                         std::cout << "The attack missed!" << std::endl;

@@ -75,6 +75,9 @@ public:
 	int SPDEFmod;
 	int SPDmod;
 
+	int EVAmod;
+	int ACCmod;
+
 private:
 	float StatModToStatChange(int mod);
 

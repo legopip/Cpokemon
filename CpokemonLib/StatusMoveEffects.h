@@ -10,8 +10,101 @@ public:
     int change;
     int chance;
     bool isIndependant; //does this require the move to have hit before?
+    bool affectsUser = false;
 
     void Invoke(Pokemon* user, std::vector<Pokemon*> targets, MoveSummary& summery) {
+        if (affectsUser) {
+            bool hasHit = false;
+            for (int i = 0; i < targets.size(); i++) {
+                if (summery.hits[i]) { hasHit = true; break; }
+            }
+            if (hasHit) {
+                switch (affectedStat)
+                {
+                case ATK_STAT:
+                    user->ATKmod += change;
+                    if (user->ATKmod < -6) {
+                        std::cout << "It can't go any lower!" << std::endl;
+                        user->ATKmod = -6;
+                    }
+                    if (user->ATKmod > 6) {
+                        std::cout << "It can't go any higher!" << std::endl;
+                        user->ATKmod = 6;
+                    }
+                    break;
+                case DEF_STAT:
+                    user->DEFmod += change;
+                    if (user->DEFmod < -6) {
+                        std::cout << "It can't go any lower!" << std::endl;
+                        user->DEFmod = -6;
+                    }
+                    if (user->DEFmod > 6) {
+                        std::cout << "It can't go any higher!" << std::endl;
+                        user->DEFmod = 6;
+                    }
+                    break;
+                case SPATK_STAT:
+                    user->SPATKmod += change;
+                    if (user->SPATKmod < -6) {
+                        std::cout << "It can't go any lower!" << std::endl;
+                        user->SPATKmod = -6;
+                    }
+                    if (user->SPATKmod > 6) {
+                        std::cout << "It can't go any higher!" << std::endl;
+                        user->SPATKmod = 6;
+                    }
+                    break;
+                case SPDEF_STAT:
+                    user->SPDEFmod += change;
+                    if (user->SPDEFmod < -6) {
+                        std::cout << "It can't go any lower!" << std::endl;
+                        user->SPDEFmod = -6;
+                    }
+                    if (user->SPDEFmod > 6) {
+                        std::cout << "It can't go any higher!" << std::endl;
+                        user->SPDEFmod = 6;
+                    }
+                    break;
+                case SPD_STAT:
+                    user->SPDmod += change;
+                    if (user->SPDmod < -6) {
+                        std::cout << "It can't go any lower!" << std::endl;
+                        user->SPDmod = -6;
+                    }
+                    if (user->SPDmod > 6) {
+                        std::cout << "It can't go any higher!" << std::endl;
+                        user->SPDmod = 6;
+                    }
+                    break;
+                case EVA_STAT:
+                    user->EVAmod += change;
+                    if (user->EVAmod < -3) {
+                        std::cout << "It can't go any lower!" << std::endl;
+                        user->EVAmod = -3;
+                    }
+                    if (user->EVAmod > 3) {
+                        std::cout << "It can't go any higher!" << std::endl;
+                        user->EVAmod = 3;
+                    }
+                    break;
+                case ACC_STAT:
+                    user->ACCmod += change;
+                    if (user->ACCmod < -3) {
+                        std::cout << "It can't go any lower!" << std::endl;
+                        user->ACCmod = -3;
+                    }
+                    if (user->ACCmod > 3) {
+                        std::cout << "It can't go any higher!" << std::endl;
+                        user->ACCmod = 3;
+                    }
+                    break;
+                default:
+                    break;
+                }
+            }
+            return;
+        }
+
         for (int i = 0; i < targets.size(); i++) {
             if (!isIndependant) {
                 if (!summery.hits[i]) { continue; } //the attack missed this pokemon, so skip it
@@ -83,6 +176,28 @@ public:
                 if (targets[i]->SPDmod > 6) {
                     std::cout << "It can't go any higher!" << std::endl;
                     targets[i]->SPDmod = 6;
+                }
+                break;
+            case EVA_STAT:
+                targets[i]->EVAmod += change;
+                if (targets[i]->EVAmod < -3) {
+                    std::cout << "It can't go any lower!" << std::endl;
+                    targets[i]->EVAmod = -3;
+                }
+                if (targets[i]->EVAmod > 3) {
+                    std::cout << "It can't go any higher!" << std::endl;
+                    targets[i]->EVAmod = 3;
+                }
+                break;
+            case ACC_STAT:
+                targets[i]->ACCmod += change;
+                if (targets[i]->ACCmod < -3) {
+                    std::cout << "It can't go any lower!" << std::endl;
+                    targets[i]->ACCmod = -3;
+                }
+                if (targets[i]->ACCmod > 3) {
+                    std::cout << "It can't go any higher!" << std::endl;
+                    targets[i]->ACCmod = 3;
                 }
                 break;
             default:

@@ -9,6 +9,8 @@ Pokemon::Pokemon() {
 	SPATKmod = 0;
 	SPDEFmod = 0;
 	SPDmod = 0;
+	EVAmod = 0;
+	ACCmod = 0;
 	cleanUpNVStatus = false;
 }
 
