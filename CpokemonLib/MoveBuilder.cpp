@@ -1,7 +1,13 @@
 #include "MoveBuilder.h"
-#include "DamagingMoveEffects.h"
-#include "StatusMoveEffects.h"
-#include "OddMoveEffects.h"
+#include "PhysicalAttackMove.h"
+#include "SpecialAttackMove.h"
+#include "LifeStealEffect.h"
+#include "RecoilEffect.h"
+#include "StatChangeEffect.h"
+#include "NVStatusEnemyEffect.h"
+#include "WeatherChangeEffect.h"
+#include "CopyMoveEffect.h"
+#include "RecycleMoveEffect.h"
 
 MoveBuilder::MoveBuilder()
 {
@@ -490,6 +496,30 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		attack->accuracy = -1;
 
 		move->AddEffect(attack);
+	} break;
+	case MEGA_DRAIN: {
+		move->name = "Mega Drain";
+		move->type = GRASS_TYPE;
+		move->PP = 15;
+		move->category = SPECIAL_MOVE;
+		move->makesContact = false;
+		move->isSoundBased = false;
+		move->range = TARGETS_ALL_ENEMIES;
+
+		SpecialAttackMove* attack = new SpecialAttackMove();
+		attack->power = 50;
+		attack->accuracy = 95;
+
+		LifeStealEffect* lifeSteal = new LifeStealEffect();
+
+		move->AddEffect(attack);
+		move->AddEffect(lifeSteal);
+	} break;
+	case FIRE_FANG: {
+
+	} break;
+	case TAKE_DOWN: {
+
 	} break;
 	default:
 		break;

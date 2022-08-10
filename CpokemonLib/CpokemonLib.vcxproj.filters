@@ -58,6 +58,15 @@
     <Filter Include="Pokemon\Evolution">
       <UniqueIdentifier>{9d1b6796-d1a7-48a7-9f5d-9a63e8f8b95d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Moves\MoveEffects\DamageStuff">
+      <UniqueIdentifier>{5fe7b052-9669-4fed-bcaa-2a309da03032}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Moves\MoveEffects\StatusStuff">
+      <UniqueIdentifier>{62427b68-ae20-4ca2-9a16-2f694fa1ab30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Moves\MoveEffects\MiscStuff">
+      <UniqueIdentifier>{cf034061-6b7e-401e-a95a-2a9685574315}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Typings.h">
@@ -144,16 +153,7 @@
     <ClInclude Include="Item.h">
       <Filter>Items</Filter>
     </ClInclude>
-    <ClInclude Include="DamagingMoveEffects.h">
-      <Filter>Moves\MoveEffects</Filter>
-    </ClInclude>
-    <ClInclude Include="StatusMoveEffects.h">
-      <Filter>Moves\MoveEffects</Filter>
-    </ClInclude>
     <ClInclude Include="MoveEffect.h">
-      <Filter>Moves\MoveEffects</Filter>
-    </ClInclude>
-    <ClInclude Include="OddMoveEffects.h">
       <Filter>Moves\MoveEffects</Filter>
     </ClInclude>
     <ClInclude Include="WeatherNames.h">
@@ -188,6 +188,33 @@
     </ClInclude>
     <ClInclude Include="AllPokemon.h">
       <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicalAttackMove.h">
+      <Filter>Moves\MoveEffects\DamageStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecialAttackMove.h">
+      <Filter>Moves\MoveEffects\DamageStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeStealEffect.h">
+      <Filter>Moves\MoveEffects\DamageStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="RecoilEffect.h">
+      <Filter>Moves\MoveEffects\DamageStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="StatChangeEffect.h">
+      <Filter>Moves\MoveEffects\StatusStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="NVStatusEnemyEffect.h">
+      <Filter>Moves\MoveEffects\StatusStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="WeatherChangeEffect.h">
+      <Filter>Moves\MoveEffects\StatusStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="CopyMoveEffect.h">
+      <Filter>Moves\MoveEffects\MiscStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="RecycleMoveEffect.h">
+      <Filter>Moves\MoveEffects\MiscStuff</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

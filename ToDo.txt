@@ -2,8 +2,9 @@ Player and Trainer Classes X
 Battle Scene the uses above classes X
 AOE attacks X
 Items (kinda done)
-Evolution + more Moves
-More Pokemon + more Moves
+Evolution + more Moves X
+Rework Battle System
+More Pokemon + more Moves 
 Route and World classes & random Encounters
 Saving/Loading
 Catching Pokemon
