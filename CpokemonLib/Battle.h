@@ -21,7 +21,7 @@ private:
     bool isWildEncouter;
     bool isDoubleBattle;
 
-    WeatherNames currentWeather;
+    BattleState battlestate;
 
     Move* lastUsedMove;
 

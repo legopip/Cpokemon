@@ -6,27 +6,27 @@
 #include "Typings.h"
 
 class TypeChart {
-private:
-	//[attacking type] [defending type]
-	//n = x1, s = x2, h = x0.5, x = x0            n   g   f   w   e   g   b   f   r   p   f   p   g   i   d   d   s   f
-	const char chart[18][18] = {	/*normal*/	{'n','n','n','n','n','n','n','n','h','n','n','n','x','n','n','n','h','n'},
-									/*grass*/	{'n','h','h','s','n','s','h','h','s','h','n','n','n','n','h','n','h','n'},
-									/*fire*/	{'n','s','h','h','n','n','s','n','h','n','n','n','n','s','h','n','s','n'},
-									/*water*/	{'n','h','s','h','n','s','n','n','s','n','n','n','n','h','h','n','n','n'},
-									/*electric*/{'n','h','n','s','h','x','n','s','n','n','n','n','n','n','h','n','n','n'},
-									/*ground*/	{'n','h','s','n','s','n','h','x','s','s','n','n','n','n','n','n','s','n'},
-									/*bug*/		{'n','s','h','n','n','n','n','h','n','h','h','s','n','n','n','s','h','s'},
-									/*flying*/	{'n','s','n','n','h','n','s','n','h','n','s','n','n','n','n','n','h','n'},
-									/*rock*/	{'n','n','s','n','n','h','s','s','n','n','h','n','n','s','n','n','h','n'},
-									/*poison*/	{'n','s','n','s','n','h','h','n','h','h','n','n','h','n','n','h','x','s'},
-									/*fighting*/{'s','n','n','n','n','n','h','h','s','h','n','h','x','s','n','s','s','h'},
-									/*psychic*/	{'n','n','n','n','n','n','h','n','n','s','s','h','h','h','n','x','n','n'},
-									/*ghost*/	{'x','n','n','n','n','h','n','n','n','n','n','s','s','n','n','h','n','n'},
-									/*ice*/		{'n','s','n','h','n','s','n','s','n','n','n','n','n','h','s','n','h','n'},
-									/*dragon*/	{'n','n','n','n','n','n','n','n','n','n','n','n','n','n','s','n','h','x'},
-									/*dark*/	{'n','n','n','n','n','n','n','n','n','n','h','s','s','n','n','h','n','h'},
-									/*steel*/	{'n','h','h','h','h','n','n','n','s','n','n','n','n','s','n','n','h','s'},
-									/*fairy*/	{'n','n','h','n','n','n','n','n','n','h','s','n','h','h','s','s','h','n'} };
+private:							//        n   g   f   w   e   g   b   f   r   p   f   p   g   i   d   d   s   f
+	//[attacking type] [defending type]       o   r   i   a   l   r   u   l   o   o   i   s   h   c   r   a   t   a
+	//n = x1, s = x2, h = x0.5, x = x0        r   a   r   t   e   o   g   y   c   i   g   y   o   e   a   r   e   i
+	const char chart[18][18] = {	/*nor*/	{'n','n','n','n','n','n','n','n','h','n','n','n','x','n','n','n','h','n'},
+									/*gra*/	{'n','h','h','s','n','s','h','h','s','h','n','n','n','n','h','n','h','n'},
+									/*fir*/	{'n','s','h','h','n','n','s','n','h','n','n','n','n','s','h','n','s','n'},
+									/*wat*/	{'n','h','s','h','n','s','n','n','s','n','n','n','n','h','h','n','n','n'},
+									/*ele*/ {'n','h','n','s','h','x','n','s','h','n','n','n','n','n','h','n','n','n'},
+									/*gro*/	{'n','h','s','n','s','n','h','x','s','s','n','n','n','n','n','n','s','n'},
+									/*bug*/	{'n','s','h','n','n','n','n','h','n','h','h','s','n','n','n','s','h','s'},
+									/*fly*/	{'n','s','n','n','h','n','s','n','h','n','s','n','n','n','n','n','h','n'},
+									/*roc*/	{'n','n','s','n','n','h','s','s','n','n','h','n','n','s','n','n','h','n'},
+									/*poi*/	{'n','s','n','s','n','h','h','n','h','h','n','n','h','n','n','h','x','s'},
+									/*fig*/ {'s','n','n','n','n','n','h','h','s','h','n','h','x','s','n','s','s','h'},
+									/*psy*/	{'n','n','n','n','n','n','h','n','n','s','s','h','h','h','n','x','n','n'},
+									/*gho*/	{'x','n','n','n','n','h','n','n','n','n','n','s','s','n','n','h','n','s'},
+									/*ice*/	{'n','s','n','h','n','s','n','s','n','n','n','n','n','h','s','n','h','n'},
+									/*dra*/	{'n','n','n','n','n','n','n','n','n','n','n','n','n','n','s','n','h','x'},
+									/*dar*/	{'n','n','n','n','n','n','n','n','n','n','h','s','s','n','n','h','n','h'},
+									/*ste*/	{'n','h','h','h','h','n','n','n','s','n','n','n','n','s','n','n','h','s'},
+									/*fai*/	{'n','n','h','n','n','n','n','n','n','h','s','n','n','n','s','s','h','h'} };
 
 	//something
 public:

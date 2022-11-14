@@ -272,6 +272,33 @@
     <ClCompile Include="RainyWeather.cpp">
       <Filter>Weather</Filter>
     </ClCompile>
+    <ClCompile Include="PhysicalAttackMove.cpp">
+      <Filter>Moves\MoveEffects\DamageStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyMoveEffect.cpp">
+      <Filter>Moves\MoveEffects\MiscStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="LifeStealEffect.cpp">
+      <Filter>Moves\MoveEffects\DamageStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="RecoilEffect.cpp">
+      <Filter>Moves\MoveEffects\DamageStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialAttackMove.cpp">
+      <Filter>Moves\MoveEffects\DamageStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="RecycleMoveEffect.cpp">
+      <Filter>Moves\MoveEffects\MiscStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="NVStatusEnemyEffect.cpp">
+      <Filter>Moves\MoveEffects\StatusStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="StatChangeEffect.cpp">
+      <Filter>Moves\MoveEffects\StatusStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="WeatherChangeEffect.cpp">
+      <Filter>Moves\MoveEffects\StatusStuff</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Pokemon.pkif">

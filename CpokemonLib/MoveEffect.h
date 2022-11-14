@@ -5,9 +5,10 @@
 #include "Pokemon.h"
 #include "Ability.h"
 
-struct MoveSummary;
+struct MoveSummery;
+struct BattleState;
 class MoveEffect {
 public:
-	virtual void Invoke(Pokemon* user, std::vector<Pokemon*> targets, MoveSummary& summery) = 0;
+	virtual void Resolve(Pokemon* user, std::vector<Pokemon*> targets, BattleState& battleState, MoveSummery& summery) = 0;
 	Typings* type;
 };

@@ -243,7 +243,7 @@ Move* MoveBuilder::BuildMove(MoveNames moveToMake) {
 		move->category = STATUS_MOVE;
 		move->makesContact = false;
 		move->isSoundBased = false;
-		move->range = TARGETS_1ENEMY;
+		move->range = TARGETS_SELF;
 
 		CopyMoveEffect* copyEffect = new CopyMoveEffect();
 

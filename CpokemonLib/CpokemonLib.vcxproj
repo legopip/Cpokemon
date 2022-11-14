@@ -208,20 +208,29 @@
     <ClCompile Include="AbilityBuilder.cpp" />
     <ClCompile Include="Battle.cpp" />
     <ClCompile Include="BurnStatusCondition.cpp" />
+    <ClCompile Include="CopyMoveEffect.cpp" />
+    <ClCompile Include="LifeStealEffect.cpp" />
     <ClCompile Include="LowHPPowerUpAbility.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="MoveBuilder.cpp" />
     <ClCompile Include="NonVolatileStatusCondition.h" />
+    <ClCompile Include="NVStatusEnemyEffect.cpp" />
+    <ClCompile Include="PhysicalAttackMove.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="RainyWeather.cpp" />
+    <ClCompile Include="RecoilEffect.cpp" />
+    <ClCompile Include="RecycleMoveEffect.cpp" />
     <ClCompile Include="SandyWeather.cpp" />
     <ClCompile Include="SleepStatusCondition.cpp" />
     <ClCompile Include="SnowyWeather.cpp" />
+    <ClCompile Include="SpecialAttackMove.cpp" />
+    <ClCompile Include="StatChangeEffect.cpp" />
     <ClCompile Include="StatusConditionBuilder.cpp" />
     <ClCompile Include="SunnyWeather.cpp" />
     <ClCompile Include="Trainer.cpp" />
     <ClCompile Include="Weather.cpp" />
+    <ClCompile Include="WeatherChangeEffect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pokemon.pkif" />

@@ -7,11 +7,13 @@ Move::~Move() {
 	}
 }
 
-void Move::Invoke(Pokemon* user, std::vector<Pokemon*> targets, MoveSummary summery) {
+
+void Move::Resolve(Pokemon* user, std::vector<Pokemon*> targets, BattleState& battleState) {
+	MoveSummery summery;
+	summery.totalDamage = 0;
 	std::cout << user->nickname << " used " << name << "." << std::endl;
-	summery.damageTotal = 0;
 	for (int i = 0; i < effects.size(); i++) {
-		effects[i]->Invoke(user, targets, summery);
+		effects[i]->Resolve(user, targets, battleState, summery);
 	}
 }
 

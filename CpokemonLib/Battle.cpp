@@ -10,7 +10,8 @@ Battle::Battle(Player* player, Trainer* trainer, bool isWildEncounter, bool isDo
     this->enemy = trainer;
     this->isDoubleBattle = isDoubleBattle;
 
-    currentWeather = CLEAR_WEATHER;
+   
+    battlestate.currentWeather = CLEAR_WEATHER;
 }
 
 Battle::~Battle() {
@@ -116,11 +117,9 @@ void Battle::ResolveBattle() {
                         continue;
                     }
                 }
-                MoveSummary sum;
-                sum.lastUsedMove = lastUsedMove;
-                sum.currentWeather = currentWeather;
-                turns[i].move->Invoke(turns[i].pokemon, turns[i].targets, sum);
-                currentWeather = sum.currentWeather;
+                
+                turns[i].move->Resolve(turns[i].pokemon, turns[i].targets, battlestate);
+                
                 lastUsedMove = turns[i].move;
             }
         }
@@ -135,15 +134,17 @@ void Battle::ResolveBattle() {
         std::vector<Pokemon*> currentPokemon;
         currentPokemon.push_back(playerActivePokemon);
         currentPokemon.push_back(enemyActivePokemon);
-        weatherLookUp.weather[currentWeather]->Upkeep(currentPokemon);
-        if (weatherLookUp.weather[currentWeather]->cleanUpFlag) {
-            currentWeather = CLEAR_WEATHER;
+        weatherLookUp.weather[battlestate.currentWeather]->Upkeep(currentPokemon);
+        if (weatherLookUp.weather[battlestate.currentWeather]->cleanUpFlag) {
+            battlestate.currentWeather = CLEAR_WEATHER;
         }
     }
     //reward the winner with exp
     GiveRewards();
     //in case any non-persisting weather is still in effect
-    weatherLookUp.weather[currentWeather]->CleanUpLimit();
+    weatherLookUp.weather[battlestate.currentWeather]->CleanUpLimit();
+
+    //! END OF BATTLE MIGHT NOT BE CLEANING UP PROPERLY
 }
 
 

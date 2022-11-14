@@ -21,11 +21,14 @@ enum MoveRange {
 	TARGETS_ALL_OTHERS
 };
 
-struct MoveSummary {
-	int damageTotal;
-	std::vector<bool> hits;
+struct BattleState { //this should go somewhere else
 	Move* lastUsedMove;
 	WeatherNames currentWeather;
+};
+
+struct MoveSummery {
+	int totalDamage;
+	std::vector<bool> hits;
 };
 
 class Move {
@@ -43,7 +46,7 @@ public:
 
 	std::vector<MoveEffect*> effects;
 
-	void Invoke(Pokemon* user, std::vector<Pokemon*> targets, MoveSummary summery = MoveSummary());
+	void Resolve(Pokemon* user, std::vector<Pokemon*> targets, BattleState& battleState);
 
 	void AddEffect(MoveEffect* effect);
 };
