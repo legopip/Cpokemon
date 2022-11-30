@@ -70,9 +70,9 @@ void Pokemon::CheckForLevelUp() {
 			int oldHp = GetHP();
 			level++;
 			for (int i = 0; i < species.evolutions.size(); i++) {
-				if (species.evolutions[i]->TryToEvole(this)) {
-					break;
-				}
+				//if (species.evolutions[i]->TryToEvole(this)) {
+				//	break;
+				//}
 			}
 			int newHp = GetHP();
 			currentHP += newHp - oldHp;

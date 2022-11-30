@@ -73,7 +73,7 @@ public:
 
 	~PokemonSpecies() {
 		for (int i = evolutions.size() - 1; i >= 0; i--) {
-			delete evolutions[i];
+			//delete evolutions[i];
 		}
 	}
 };
